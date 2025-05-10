@@ -1,0 +1,31 @@
+library(minfi)
+install.packages("IlluminaHumanMethylationEPIC1b5manifest",repos=NULL,type="source")
+install.packages("IlluminaHumanMethylationEPIC1b5anno.ilm10b5.hg19",repos=NULL,type="source")
+
+## test
+#### Demo data IDAT files and SampleSheet.csv were used from the "minfiDataEPIC" package (but these data may be b2).
+#### https://bioconductor.org/packages/minfiDataEPIC.
+
+library(minfi)
+library(IlluminaHumanMethylationEPIC1b5manifest)
+library(IlluminaHumanMethylationEPIC1b5anno.ilm10b5.hg19)
+
+Targets <- read.metharray.sheet(base="./test",pattern = "SampleSheet")
+RGset <- read.metharray.exp(base="./test",targets=Targets)
+RGset@annotation<-c(array="IlluminaHumanMethylationEPIC1b5",annotation="ilm10b5.hg19")
+
+RawBeta <- getBeta(RGset)
+dim(RawBeta)
+
+detP.RGset <- detectionP(RGset)
+dim(detP.RGset)
+
+Probe_detP_OK <- rownames(detP.RGset)[which(apply(detP.RGset,1,max) < 0.05)]
+RGset.preprocessNoob <- preprocessNoob(RGset)
+mset <- RGset.preprocessNoob
+meth <- getMeth(mset)
+unmeth <- getUnmeth(mset)
+Mval <- log2((meth + 100)/(unmeth + 100))
+dim(Mval)
+Beta <- getBeta(mset,offset=100)
+dim(Beta)
