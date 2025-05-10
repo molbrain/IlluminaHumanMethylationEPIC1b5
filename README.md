@@ -28,7 +28,7 @@ Other usages are same as `IlluminaHumanMethylationEPICmanifest` and `IlluminaHum
 ## Downloads
 The source file for installation is a little large, so it is stored in an external repository. Please download it from the link below.
 
-### version 1.0.1 (250510)
+### version 0.1.0 (250510)
 [IlluminaHumanMethylationEPIC1b5manifest.v0.1.0.zip](https://www.dropbox.com/scl/fi/jt3w30e2c4k2p60hglsao/IlluminaHumanMethylationEPIC1b5manifest.v0.1.0.zip?rlkey=wxcl540jibp3oo0jn4y8g83r6&dl=0 "External link for IlluminaHumanMethylationEPIC1b5manifest.v0.1.0.zip")
 
 [IlluminaHumanMethylationEPIC1b5anno.ilm10b5.hg19.v0.1.0.zip](https://www.dropbox.com/scl/fi/j7gagvkkm2fgdp8gi3fuj/IlluminaHumanMethylationEPIC1b5anno.ilm10b5.hg19.v0.1.0.zip?rlkey=j4gxtlbbww9pkmxgt6jh0deka&dl=0 "External link for IlluminaHumanMethylationEPIC1b5anno.ilm10b5.hg19.v0.1.0.zip")
